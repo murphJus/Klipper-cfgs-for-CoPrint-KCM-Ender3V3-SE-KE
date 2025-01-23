@@ -85,7 +85,8 @@ restart_method: command
 Save config and restart.
 
 ## Future Macro adjustments
-When you cancel a print it does not cut and retract the previous color. 
+When you cancel a print, it does not cut and retract the previous color. 
+This is what innitiates that process when a print finishes.
 ```
 FILAMENT_CUT
     G1 E-78
@@ -95,7 +96,7 @@ FILAMENT_CUT
     M104 S0
     M140 S0
 ```
-I will experiment with adding this to the: 
+I will experiment with adding that to this: 
 ```
 [gcode_macro CANCEL_PRINT]
 description: Cancel the actual running print
