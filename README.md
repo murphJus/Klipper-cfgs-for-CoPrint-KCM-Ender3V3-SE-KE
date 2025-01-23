@@ -74,7 +74,7 @@ restart_method: command
 
 Go to kcm.cfg and click on the device tab again.
 
-Loog for:
+Look for:
 ![sKCM](images/kcm.png)
 And input that into here:
 ```
@@ -113,4 +113,4 @@ gcode:
   TURN_OFF_HEATERS
   CANCEL_PRINT_BASE
 ``` 
-In the future
+In the near future.
