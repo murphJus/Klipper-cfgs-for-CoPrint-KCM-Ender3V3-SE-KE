@@ -61,10 +61,10 @@ Save config and restart.
 
 ## MCU USB Identification
 Go to the chroma_head.cfg file and click on devices in the top right.
-![Serial](device.png)
+![Serial](.pictures/device.png)
 
 Look For:
-![sLong](long.png)
+![sLong](.pictures/long.png)
 And input this into here:
 ```
 [mcu cp_Head]
@@ -75,7 +75,7 @@ restart_method: command
 Go to kcm.cfg and click on the device tab again.
 
 Loog for:
-![sKCM](kcm.png)
+![sKCM](.pictures/kcm.png)
 And input that into here:
 ```
 [mcu cp_kcm]
