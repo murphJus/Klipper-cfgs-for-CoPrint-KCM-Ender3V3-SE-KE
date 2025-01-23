@@ -2,6 +2,15 @@
 
 ## Z-Offset and Bed Mesh
 Bedmesh is the same normal process but z-offset must be manually inputted in chroma_head.cfg.
+These parameters in bed_mesh.cfg work for now
+```
+[bed_mesh]
+mesh_min: 43, 10
+mesh_max: 205, 215
+#There parameters may be adjusted in the future
+```
+
+Z-Offset
 ```
 [probe]
 pin: cp_Head:PA3
@@ -12,9 +21,11 @@ y_offset: -1.5
 #Input your z-offset here
 z_offset: 3.2
 ```
+Save config and restart.
 
 ## PID Tune 
 PID tuning for the CoPrint Chromahead is inputted manually 
+Bed PID is auto stored into the printer.cfg
 
 Start by inputting this into the console 
 ```
@@ -46,3 +57,60 @@ pid_Kp:15.407
 pid_Ki:0.744
 pid_Kd:79.727
 ```
+Save config and restart.
+
+## MCU USB Identification
+Go to the chroma_head.cfg file and click on devices in the top right.
+![Serial](device.png)
+
+Look For:
+![sLong](long.png)
+And input this into here:
+```
+[mcu cp_Head]
+serial: /dev/serial/by-id/usb-Klipper_stm32f103xe_31FF72064743303740281657-if00
+restart_method: command
+```
+
+Go to kcm.cfg and click on the device tab again.
+
+Loog for:
+![sKCM](kcm.png)
+And input that into here:
+```
+[mcu cp_kcm]
+serial: /dev/serial/by-id/usb-Klipper_stm32f103xe_35FF72063131553807290543-if00
+restart_method: command
+```
+Save config and restart.
+
+## Future Macro adjustments
+When you cancel a print it does not cut and retract the previous color. 
+```
+FILAMENT_CUT
+    G1 E-78
+    G90
+    G1 X{x_stop} Y{y_stop}
+    M106 S0
+    M104 S0
+    M140 S0
+```
+I will experiment with adding this to the: 
+```
+[gcode_macro CANCEL_PRINT]
+description: Cancel the actual running print
+rename_existing: CANCEL_PRINT_BASE
+variable_park: True
+gcode:
+  ## Move head and retract only if not already in the pause state and park set to true
+
+  {% if printer.pause_resume.is_paused|lower == 'false' and park|lower == 'true'%}
+    _TOOLHEAD_PARK_PAUSE_CANCEL
+  {% endif %}
+
+
+
+  TURN_OFF_HEATERS
+  CANCEL_PRINT_BASE
+``` 
+In the future
