@@ -1,7 +1,7 @@
 # Klipper-cfgs-for-CoPrint-KCM-Ender3V3-SE-KE
 
 ## Z-Offset and Bed Mesh
-Bedmesh is the same normal process but z-offset must be manually inputted in chroma_head.cfg.
+Bedmesh follows the same normal process, but z-offset must be manually inputted in chroma_head.cfg.
 These parameters in bed_mesh.cfg work for now
 ```
 [bed_mesh]
