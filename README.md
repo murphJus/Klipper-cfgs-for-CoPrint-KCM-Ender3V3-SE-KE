@@ -26,6 +26,7 @@ Save config and restart.
 
 ## PID Tune 
 PID tuning for the CoPrint Chromahead is inputted manually 
+
 Bed PID is auto stored into the printer.cfg
 
 Start by inputting this into the console 
@@ -34,6 +35,7 @@ PID_CALIBRATE HEATER=extruder TARGET=220
 ```
 
 After it finishes click the save and restart firmware button and record your values.
+
 Input your values into the chroma_head.cfg extruder
 ```
 [extruder]
