@@ -2,7 +2,8 @@
 
 ## Z-Offset and Bed Mesh
 Bedmesh follows the same normal process, but z-offset must be manually inputted in chroma_head.cfg.
-These parameters in bed_mesh.cfg work for now
+
+These parameters in bed_mesh.cfg work for now.
 ```
 [bed_mesh]
 mesh_min: 43, 10
