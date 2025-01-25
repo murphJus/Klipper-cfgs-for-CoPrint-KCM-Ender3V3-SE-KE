@@ -34,7 +34,7 @@ Start by inputting this into the console
 PID_CALIBRATE HEATER=extruder TARGET=your target temp 
 ```
 
-After it finishes click the save and restart firmware button and record your values.
+After it finishes click the save and restart firmware button and record your values without saving.
 
 Input your values into the chroma_head.cfg extruder
 ```
