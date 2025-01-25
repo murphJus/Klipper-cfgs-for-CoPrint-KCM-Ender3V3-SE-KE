@@ -31,7 +31,7 @@ Bed PID is auto stored into the printer.cfg
 
 Start by inputting this into the console 
 ```
-PID_CALIBRATE HEATER=extruder TARGET=220 
+PID_CALIBRATE HEATER=extruder TARGET=your target temp 
 ```
 
 After it finishes click the save and restart firmware button and record your values.
