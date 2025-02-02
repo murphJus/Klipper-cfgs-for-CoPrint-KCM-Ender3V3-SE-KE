@@ -1,6 +1,6 @@
 [bed_mesh]
 mesh_min: 43, 10
-mesh_max: 205, 215
+mesh_max: 222, 200
 #There parameters may be adjusted in the future
 
 #Change these parameters according to the maximum and minimum values ​​of your printer.
